@@ -1,7 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
+
+type Movie = {
+  id: number;
+  poster_path: string;
+  original_title: string;
+  original_name: string;
+  release_date: string;
+  vote_average: number;
+  overview: string;
+};
 
 async function getData() {
   const res = await fetch(
@@ -14,7 +24,7 @@ async function getData() {
   return res.json();
 }
 
-export default async function page() {
+export default async function Page() {
   const data = await getData();
   return (
     <>
@@ -29,19 +39,21 @@ export default async function page() {
         </div>
         <div className="row flex justify-end gap-3 mt-5">
           <Link
-            href="/movies/search"
+            href="/movie/search"
             className="px-3 py-1 text-sm font-bold font-shantell rounded-md bg-zinc-900 text-white hover:bg-white hover:text-zinc-900 border-2 border-zinc-900 transition-colors duration-150"
           >
             Kembali
           </Link>
         </div>
-        <div className="row grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:px-10 mt-10">
-          {data?.results.map((movie: any) => (
+        <div className="row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:px-10 mt-10">
+          {data?.results.map((movie: Movie) => (
             <div className="card mx-auto" key={movie.id}>
               <div className="img">
-                <img
+                <Image
                   src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                  alt={movie.original_title || movie.original_name}
+                  alt={movie.original_title}
+                  width={195}
+                  height={285}
                   className="rounded-md"
                 />
               </div>
