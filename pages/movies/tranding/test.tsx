@@ -10,6 +10,7 @@ export default class Page extends Component {
     const res = await fetch(
       `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.API_KEY}`
     );
+
     const data = await res.json();
 
     return { data };
