@@ -2,23 +2,13 @@
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-
-type Movie = {
-  id: number;
-  poster_path: string;
-  original_title: string;
-  original_name: string;
-  release_date: string;
-  vote_average: number;
-  overview: string;
-};
+import { Movie } from "@/types/Movie";
 
 async function getData() {
   const res = await fetch(
     `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.API_KEY}`
   );
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
   return res.json();

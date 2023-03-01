@@ -1,5 +1,4 @@
 "use client";
-
 import Form from "@/components/Form";
 import Link from "next/link";
 import { useState } from "react";
@@ -9,7 +8,6 @@ const Search = require("@/public/assets/Search.svg");
 
 export default function Page() {
   const [search, setSearch] = useState("");
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
     window.location.href = `/movie/search/${search}`;

@@ -1,28 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import Footer from "@/components/Footer";
 import Link from "next/link";
-
 import Image from "next/image";
+import { Movie } from "@/types/Movie";
 
 type Params = {
   judul: string;
 };
-type Movie = {
-  id: number;
-  poster_path: string;
-  original_title: string;
-  original_name: string;
-  release_date: string;
-  vote_average: number;
-  overview: string;
-};
 
 async function getMovieByTitle(title: string) {
   const res = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=a3757f854014427d94cc506e4b7126ad&query=${title}}`
+    `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${title}}`
   );
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
   return res.json();
