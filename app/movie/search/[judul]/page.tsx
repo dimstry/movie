@@ -41,7 +41,7 @@ export default async function Home({ params }: { params: Params }) {
             Kembali
           </Link>
         </div>
-        <div className="row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:px-10 mt-10">
+        <div className="row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:px-10 mt-10 pb-16">
           {data?.results.map((movie: Movie) => (
             <div className="card mx-auto" key={movie.id}>
               <div className="img">
@@ -67,7 +67,6 @@ export default async function Home({ params }: { params: Params }) {
             </div>
           ))}
         </div>
-        <Footer />
       </main>
     </>
   );
