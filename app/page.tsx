@@ -1,6 +1,6 @@
 import ActionButtons from "@/components/ActionButtons";
 import Image from "next/image";
-const Benner = require("../public/assets/Benner.svg");
+import Benner from "../public/assets/Benner.svg";
 
 export default function Home() {
   return (

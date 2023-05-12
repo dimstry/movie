@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { Movie } from "@/types/Movie";
@@ -24,7 +23,7 @@ export default async function Home({ params }: { params: Params }) {
 
   return (
     <>
-      <main className="container px-3 md:px-16 py-5 mx-auto">
+      <main className="container px-3 md:px-16 py-5 mx-auto min-h-screen">
         <div className="row flex justify-center gap-3">
           <h1 className="text-3xl font-bold text-zinc-900 font-shantell">
             .Mo<span className="text-blue-900">vie</span>:{" "}
@@ -62,7 +61,9 @@ export default async function Home({ params }: { params: Params }) {
                     Rating: {movie.vote_average} / 10
                   </p>
                 </span>
-                <p className="text text-xs">{movie.overview}</p>
+                <p className="text text-xs">
+                  {movie.overview.slice(0, 200) + "..."}
+                </p>
               </div>
             </div>
           ))}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 
-const Search = require("@/public/assets/Search.svg");
+import Search from "@/public/assets/Search.svg";
 
 export default function Page() {
   const [search, setSearch] = useState("");
