@@ -1,7 +1,8 @@
 import React from "react";
+
 interface PropsForm {
   handleSubmit: (e: any) => void;
-  setSearch: (e: any) => void;
+  setSearch: (e: string) => void;
 }
 
 export default function Form({ handleSubmit, setSearch }: PropsForm) {
