@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Movie } from "@/types/Movie";
+import BackPage from "@/components/BackPage";
 
 async function getData() {
   const res = await fetch(
@@ -26,12 +27,7 @@ export default async function Page() {
         </h2>
       </div>
       <div className="row flex justify-end gap-3 mt-5">
-        <Link
-          href="/movie/search"
-          className="px-3 py-1 text-sm font-bold font-shantell rounded-md bg-zinc-900 text-white hover:bg-white hover:text-zinc-900 border-2 border-zinc-900 transition-colors duration-150"
-        >
-          Kembali
-        </Link>
+        <BackPage />
       </div>
       <div className="row grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:px-10 mt-10">
         {data?.results.map((movie: Movie) => (
