@@ -13,15 +13,15 @@
    API_KEY=Your_API
    ```
 4. After that you can run the
-  ```
-  npm install
-  ```
-  command first to install all packages
-  then run the 
-  ```
-  npm run dev
-  ```
-  command.
+   ```
+   npm install
+   ```
+   command first to install all packages
+   then run the 
+   ```
+   npm run dev
+   ```
+   command.
   
 ### Priview
 <img src="IMG.png" width="100%"/>
